@@ -7,7 +7,7 @@
 
 const body = document.body;
 
-window.document.body.addEventListener("mousemove", ()=>openFullscreen(body) )
+window.document.body.addEventListener("mousedown", ()=>openFullscreen(body) )
 
 function openFullscreen(elem) {
   if (elem.requestFullscreen) {
@@ -42,25 +42,23 @@ window.onload = function () {
   // imagine.src = "./guayo.jpg"
 
 
-  video = document.createElement("video")
-  // video.src = "https://www.youtube.com/watch?v=B4Kn3djJMCE"+"&origin=https://vigliensoni.github.io"
-  // video.src = "https://i.imgur.com/3C088RY.mp4"
-  video.src = "https://raw.githubusercontent.com/ojack/hydra-examples/master/assets/jelly.webm"
-  video.autoplay = true
-  video.muted = true
-  video.loop = true
-  video.crossOrigin = "anonymous"
+  video = document.createElement("video");
+  video.crossOrigin = "anonymous";
   
+  video.src = "https://www.youtube.com/embed/W7qWa52k-nE";
+  // video.src = "https://i.imgur.com/3C088RY.mp4"
+  // video.src = "https://raw.githubusercontent.com/ojack/hydra-examples/master/assets/jelly.webm"
+  video.autoplay = true;
+  video.muted = true;
+  video.loop = true;
+  
+  // video.play()
   
   
   video.play().then(()=>s0.init({src:video, dynamic:true}))  
   
 
   src(s0)
-  // .scale(()=> a.fft[0]*4.5 )
-  // .modulate(osc(() => mouse.y * 1, 1.9, 0.08), 0.01, 0.1)
-  // .rotate(({time})=>(time%360)/2)
-  // .color([1, 0, 0])
   .colorama( ({time}) => Math.sin(time/5) )
   .out(o0)
 
