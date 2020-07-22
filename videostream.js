@@ -3,9 +3,21 @@
 // var myElement = document.createElement('img'); // <img />
 // myElement.src = 'PabloPIMP.jpeg';    // <img src=" " />
 
+// const body = document.body;
+// openFullscreen(body);
 
 
-
+// function openFullscreen(elem) {
+//   if (elem.requestFullscreen) {
+//     elem.requestFullscreen();
+//   } else if (elem.mozRequestFullScreen) { /* Firefox */
+//     elem.mozRequestFullScreen();
+//   } else if (elem.webkitRequestFullscreen) { /* Chrome, Safari and Opera */
+//     elem.webkitRequestFullscreen();
+//   } else if (elem.msRequestFullscreen) { /* IE/Edge */
+//     elem.msRequestFullscreen();
+//   }
+// }
 
 window.onload = function () {
   const hydra = new Hydra()
@@ -29,12 +41,15 @@ window.onload = function () {
 
 
   video = document.createElement("video")
-  video.autoplay = true
-  video.crossOrigin = "anonymous"
-  video.muted = true
+  video.src = "https://www.youtube.com/watch?v=B4Kn3djJMCE"+"&origin=https://vigliensoni.github.io"
   // video.src = "https://i.imgur.com/3C088RY.mp4"
-  video.src = "https://www.youtube.com/watch?v=B4Kn3djJMCE"
+  video.autoplay = true
+  video.muted = true
   video.loop = true
+  video.crossOrigin = "anonymous"
+  
+  
+  
   video.play().then(()=>s0.init({src:video, dynamic:true}))  
   
 
