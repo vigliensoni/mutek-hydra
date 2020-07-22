@@ -4,7 +4,7 @@
 // myElement.src = 'PabloPIMP.jpeg';    // <img src=" " />
 
 
-
+document.body.requestFullscreen()
 
 
 window.onload = function () {
