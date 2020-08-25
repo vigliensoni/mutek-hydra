@@ -1,9 +1,3 @@
-// const Hydra = require('hydra-synth')
-
-// var myElement = document.createElement('img'); // <img />
-// myElement.src = 'PabloPIMP.jpeg';    // <img src=" " />
-
-
 document.body.requestFullscreen()
 
 
