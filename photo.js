@@ -1,26 +1,24 @@
-document.body.requestFullscreen()
-
-
 window.onload = function () {
   const hydra = new Hydra()
   const photoPath = ['img/hola.png', 'img/GVM.jpg', 'img/pk_400.png']
   const n = photoPath.length
 
 
-  let imagine = new Image()
-  imagine.onload = () => s0.init({src:imagine, dynamic:false})
-  imagine.crossOrigin = "anonymous"
+  let image0 = new Image()
 
+  image0.onload = () => s0.init({src:image0, dynamic:false})
+  image0.crossOrigin = "anonymous"
+  
 
-  src(s0)
-  .colorama( ({time}) => Math.sin(time/5) )
-  .out(o0)
+  s0.initCam()
+  src(s0).blend(o0, .75).scrollX(({time})=>time*.01).scale(2).repeat(2.5).rotate(1.047).out()
+
 
   let i = 0
-  setInterval(changephoto, 750);
+  setInterval(changephoto, 1000);
   
   function changephoto() {
-      imagine.src = photoPath[i%n];
+      image0.src = photoPath[i%n];
       i++
     }
     
