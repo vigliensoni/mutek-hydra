@@ -19,11 +19,11 @@ s0.initCam(s0)
   video.loop = true
   video.src = "./fotos/videos/robotstrim.mp4"
 
-  video.play().then(()=>s1.init({src:video, dynamic:true}))
+  // video.play().then(()=>s1.init({src:video, dynamic:true}))
 
-  video.src = "./fotos/videos/robotstrim.mp4"
+  // video.src = "./fotos/videos/robotstrim.mp4"
 
-  video.play().then(()=>s2.init({src:video, dynamic:true}))
+  // video.play().then(()=>s2.init({src:video, dynamic:true}))
 
 
   // // MEDIA READERS MEDIA READERS MEDIA READERS MEDIA READERS
@@ -46,7 +46,7 @@ src(s0)
 .scrollX(0, ({time}) => Math.sin(time*0.5)*0.05 )
 
 .blend(o0)
-.modulate(o3)
+// .modulate(o3)
 
 .modulateHue(o0)
 .modulateScale(o0,.4)
@@ -55,7 +55,7 @@ src(s0)
 .modulate(o2,.001)
 .out(o0)
 
--
+
 //
 // osc(10, 0.9, 300)
 // .color(0.9, 0.7, 0.8)
@@ -77,20 +77,20 @@ src(s0)
 // .scale(2)
 // .out(o1)
 
--
-
-
-osc(3,.4)
-.rotate(6,.4)
-.kaleid(3)
-.out(o3)
 
 
 
-// src(s1)
-//   	.blend(src(o2).scale(1.1))
-//     .blend(o2)
-// .out(o2)
+// osc(3,.4)
+// .rotate(6,.4)
+// .kaleid(3)
+// .out(o3)
+
+
+
+src(s1)
+  	.blend(src(o2).scale(1.1))
+    .blend(o2)
+.out(o2)
 //
 // gradient(0.125)
 // .mask(osc(20,3),.4)
@@ -108,10 +108,10 @@ osc(3,.4)
 
 // vid 1
 
-  src(s1)
-  osc().modulate(osc(() => mouse.y * 1, 1.9, 0.08), 0.01, 0.1)
-  .scale(()=> a.fft[0]*.5 )
-  out(o1)
+  // src(s1)
+  // // osc().modulate(osc(() => mouse.y * 1, 1.9, 0.08), 0.01, 0.1)
+  // .scale(()=> a.fft[0]*.5 )
+  // .out(o1)
 
 // // vid 2
   // src(s2)
