@@ -58,6 +58,6 @@ src(s0)
 
 .out(o3)
 
-render(o3)
+render()
 
 speed=.15
