@@ -2,8 +2,6 @@
 window.onload = function () {
   const hydra = new Hydra()
 
-s1.initCam(s1)
-
 a.show();
 a.setBins(4);
 a.setSmooth(.96)
@@ -39,7 +37,7 @@ a.setSmooth(.96)
   .out(o1)
 
 
-  osc(3,.7,() => mouse.x *.0028 )
+  osc(3,.7,() => mouse.x * 0.0028 )
   	.kaleid()
     .mask(o0)
   	// .thresh()
@@ -60,6 +58,6 @@ src(s0)
 
 .out(o3)
 
-  render(o3)
+render(o3)
 
-  speed=.15
+speed=.15
