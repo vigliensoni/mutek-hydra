@@ -13,7 +13,7 @@ a.setSmooth(.96)
   video.crossOrigin = "anonymous"
   video.muted = true
   video.loop = true
-  video.src = "./fotos/videos/explosiones_slow.mp4.mov"
+  video.src = "./fotos/videos/explosiones_slower.mp4"
 
   video.play().then(()=>s0.init({src:video, dynamic:true}))
 
