@@ -40,7 +40,7 @@ a.setSmooth(.96)
   .out(o1)
 
 
-  osc(3,.7,() => mouse.x *.008 )
+  osc(3,.7,() => mouse.x *.`8 )
   	.kaleid()
     .mask(o0)
   	// .thresh()
