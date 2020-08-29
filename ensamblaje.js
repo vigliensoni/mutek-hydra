@@ -63,5 +63,3 @@ src(s0)
   render(o3)
 
   speed=.15
-
-
