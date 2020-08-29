@@ -1,11 +1,8 @@
-// AGREGANDO FOTO
-
-
 
 window.onload = function () {
   const hydra = new Hydra()
 
-s1.initCam(s1)
+// s1.initCam(s1)
 
 a.show();
 a.setBins(4);
@@ -23,28 +20,22 @@ a.setSmooth(.96)
   video.play().then(()=>s0.init({src:video, dynamic:true}))
 
 src(s0)
+  .rotate (.1,() => Math.sin(time * 0.0008))
+  .scale(1.4)
+  // .blend(o1,.5)
+  .scale(  () => a.fft[3]*3+.8 )
+   .diff(o1,0.3)
+  // .modulateScale(o0,.4)
+  .modulate(s0,.025)
+  .blend(o0)
+  .modulate(o2,.03)
 
-  .rotate  (.1, ()=> Math.sin(time * 0.001))
-
-.scale(1.4)
-
-// .blend(o1,.5)
-.scale(  () => a.fft[3]*3 )
-.diff(o1,0.3)
-// .modulateScale(o0,.4)
-
-.modulate(s0,.025)
-.blend(o0)
-.modulate(o2,.03)
-
-  .out(o0)
-
+.out(o0)
 
 
 
 
 gradient(0.125)
-
   .pixelate([5,2,10],[15,8])
   .scale(0.15)
   .modulate(noise(1,0.25))
@@ -55,17 +46,17 @@ gradient(0.125)
 
 
 
-  shape(3)
-  .scale(.7)
-  .repeat(8,3)
+shape(3)
+   .scale(()=>mouse.y * 0.0008 + .1 )
+   .repeat(8,3)
   // .scale(1, ()=> 0.7 + a.fft[3])
-  .modulateScale(osc(8).rotate(Math.sin(time)),.5)
+   .modulateScale(osc(8).rotate(Math.sin(time)),.5)
    .scale(  () => a.fft[0]*8)
    .modulateRotate(osc(20, 0).thresh(0.1, 0.84), () => 0.1 + mouse.x * 0.002)
    .modulate(o2,.001)
    .blend(o2)
 
-    .out(o2)
+.out(o2)
 
 
 
