@@ -5,8 +5,6 @@
 window.onload = function () {
   const hydra = new Hydra()
 
-s1.initCam(s1)
-
 a.show();
 a.setBins(4);
 a.setSmooth(.96)
@@ -63,7 +61,8 @@ src(s0)
 
 .out(o3)
 
-  render(o3)
+  
+render(o3)
 
   speed=.15
 
