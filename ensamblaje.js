@@ -2,7 +2,6 @@
 window.onload = function () {
   const hydra = new Hydra()
 
-
 a.show();
 a.setBins(4);
 a.setSmooth(.96)
@@ -14,7 +13,7 @@ a.setSmooth(.96)
   video.crossOrigin = "anonymous"
   video.muted = true
   video.loop = true
-  video.src = "./fotos/videos/explosiones_slower.mov"
+  video.src = "./fotos/videos/explosiones_slower.mp4"
 
   video.play().then(()=>s0.init({src:video, dynamic:true}))
 
@@ -38,7 +37,7 @@ a.setSmooth(.96)
   .out(o1)
 
 
-  osc(3,.7,() => mouse.x *.0028 )
+  osc(3,.7,() => mouse.x * 0.0028 )
   	.kaleid()
     .mask(o0)
   	// .thresh()
@@ -59,6 +58,10 @@ src(s0)
 
 .out(o3)
 
-  render(o3)
+render(o3)
 
-  speed=.15
+speed=.15
+
+
+
+}
