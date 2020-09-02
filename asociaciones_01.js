@@ -110,7 +110,7 @@ gradient(.2,.3,.2)
 
 
 
-  render()
+  render(o2)
 
 
 
