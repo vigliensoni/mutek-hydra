@@ -1,6 +1,3 @@
-// AGREGANDO FOTO
-
-
 
 window.onload = function () {
   const hydra = new Hydra()
@@ -92,7 +89,6 @@ a.setSmooth()
     .contrast(2)
    .modulateRotate(o0,.4, .2)
    .modulate(o3)
-
    .blend(o3)
 
 .out(o2)
@@ -109,8 +105,7 @@ gradient(.2,.3,.2)
 
 
 
-
-  render(o2)
+render(o2)
 
 
 
