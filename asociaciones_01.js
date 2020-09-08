@@ -18,6 +18,7 @@ a.setSmooth()
   video.muted = true
   video.loop = true
   video.src = "./fotos/videos/microscopio_03_lite.mp4"
+  video.src = "./fotos/videos/microscopio_03_liteslow.mp4"
 
   video.play().then(()=>s0.init({src:video, dynamic:true}))
 
@@ -84,6 +85,7 @@ a.setSmooth()
 
   src(s0)
     .scale(.7)
+    .modulate(o3)
     .scale(() => .7 + mouse.x * 0.0002)
     .modulate(o1)
     .kaleid(()=>mouse.y*.002+1)
@@ -92,6 +94,7 @@ a.setSmooth()
     .contrast(2)
    .modulateRotate(o0,.4, .2)
    .modulate(o3)
+   // .modulate(o3)
 
    .blend(o3)
 
@@ -111,6 +114,7 @@ gradient(.2,.3,.2)
 
 
   render()
+  render(o2)
 
 
 
