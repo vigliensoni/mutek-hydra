@@ -17,7 +17,6 @@ a.setSmooth()
   video.crossOrigin = "anonymous"
   video.muted = true
   video.loop = true
-  video.src = "./fotos/videos/microscopio_03_lite.mp4"
   video.src = "./fotos/videos/microscopio_03_liteslow.mp4"
 
   video.play().then(()=>s0.init({src:video, dynamic:true}))
@@ -93,7 +92,6 @@ a.setSmooth()
     .saturate(0.2)
     .contrast(2)
    .modulateRotate(o0,.4, .2)
-   .modulate(o3)
    // .modulate(o3)
 
    .blend(o3)
@@ -113,7 +111,6 @@ gradient(.2,.3,.2)
 
 
 
-  render()
   render(o2)
 
 
