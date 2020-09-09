@@ -85,7 +85,7 @@ solid(0)
 
 
 
-render()
+render(o2)
 
 
 
@@ -95,51 +95,3 @@ render()
 
 
 }
-
-
-
-// osc(4, ()=> a.fft[0]*.2-.1, 1)
-// .scrollY( ()=>0.5 + mouse.y * 0.0014,.6,1)
-// .repeat( ()=>a.fft[0]*2+1, ()=>a.fft[1]*2+1)
-// .modulateRotate(o0,()=>a.fft[1]*.1+1)
-
-// osc(({time})=>5.0+2*Math.sin(time*.03),.02,20)
-// shape(()=>Math.sin(time)+1.2*3, .13,.01)
-//   .repeat(5,3, ()=>a.fft[0]*2, ()=>a.fft[1]*2)
-//   .scrollY(.5,0.1)
-
-
-
-// OLIVIA'S TUBE
-//
-// src(s0)
-// .blend(o0, 0.99)
-// .scale(1.01)
-// .out(o0)
-
-
-
-
-// OLIVIA'S FEEDBACK
-
-// osc(10, 0.1, 0.8)
-//   .rotate(0, 0.1)
-//   .kaleid()
-//   .color(-1, 1)
-// .out(o0)
-//
-//
-//
-// src(s0)
-//   .color(-1, Math.random()*2, 1)
-//   .colorama()
-// .out(o1)
-//
-//
-// src(o1)
-//        .layer(src(o1).mask(shape(4, 0.4, 0)))
-//        .scrollX([0.005, -0.005])
-//        .scrollY(0.005)
-// .out(o2)
-//
-//      render(o1)
