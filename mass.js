@@ -15,15 +15,15 @@ a.setSmooth(.96)
   video.crossOrigin = "anonymous"
   video.muted = true
   video.loop = true
-  video.src = "./fotos/videos/glaciar_perito_moreno.mp4"
+  video.src = "./fotos/videos/glaciar_perito_moreno_reverse.mp4"
 
   video.play().then(()=>s0.init({src:video, dynamic:true}))
 
 src(s0)
-  .rotate (.1,() => Math.sin(time * 0.0008))
+  .rotate (.1,() => Math.sin(time * 0.00008))
   .scale(1.4)
   // .blend(o1,.5)
-  .scale(  () => a.fft[3]*3+.8 )
+  .scale(  () => a.fft[3]*1.2+.5 )
    .diff(o1,0.3)
   // .modulateScale(o0,.4)
   .modulate(s0,.025)
@@ -32,13 +32,16 @@ src(s0)
 
 .out(o0)
 
+src(s0)
 
 
 
-gradient(0.125)
+
+
+gradient(0.125,.2)
   .pixelate([5,2,10],[15,8])
   .scale(0.15)
-  .modulate(noise(1,0.25))
+  .modulate(noise(  () => a.fft[0]*.3+.2 ),1,0.25)
   .scrollX(0, ({time}) => Math.sin(time*0.05)*0.05 )
   .scrollY(0, ({time}) => Math.sin(time*0.01)*-0.07 )
 
@@ -51,7 +54,7 @@ shape(3)
    .repeat(8,3)
   // .scale(1, ()=> 0.7 + a.fft[3])
    .modulateScale(osc(8).rotate(Math.sin(time)),.5)
-   .scale(  () => a.fft[0]*8)
+   .scale(  () => a.fft[2]*8)
    .modulateRotate(osc(20, 0).thresh(0.1, 0.84), () => 0.1 + mouse.x * 0.002)
    .modulate(o2,.001)
    .blend(o2)
