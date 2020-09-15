@@ -10,47 +10,42 @@ a.setSmooth(.96)
 // a.hide()
 
 
-  const video = document.createElement("video")
-  video.autoplay = true
-  video.crossOrigin = "anonymous"
-  video.muted = true
-  video.loop = true
-  video.src = "./fotos/videos/copper_trimslowtrim.mp4"
+let video = document.createElement("video")
+video.autoplay = true
+video.crossOrigin = "anonymous"
+video.muted = true
+video.loop = true
+video.src = "./fotos/videos/copper_trimslowtrim.mp4"
 
-  video.play().then(()=>s0.init({src:video, dynamic:true}))
+video.play().then(()=>s0.init({src:video, dynamic:true}))
 
+hush()
 
 
 src(s0)
 .scale(()=> a.fft[2]*.2+1)
 .color(()=>Math.sin(time*0.03),()=>Math.sin(time*0.17),()=>Math.sin(time*0.07))
-.rotate(()=>mouse.x*.003+.000001,Math.sin(time) )
+.rotate(()=>mouse.x*.0003+.000001,Math.sin(time) )
+.color(()=>mouse.y * 0.001,()=>mouse.y * 0.0008)
 
-.modulateScale(noise(.8,.0031,.1))
+// .modulateScale(noise(.8,.0031,.1))
 .out(o0)
-
-
-
-
 
 
 
 
 src(o0)
 // voronoi(5.00, 0.16)
-
 // diff(src(o3).scale(1.8)).modulateScale(osc(2).modulateRotate(o0, .74))
-
 .diff(src(o3)
-.scrollY(0, [-.0001, 0.1].fast(0.004))).brightness([-0.029, -.17].smooth().fast(0.21))
+.scrollY(0, [-.0001, 0.1].fast(0.004)))
+.brightness([-0.029, -.17].smooth().fast(0.21))
 .out(o3)
 
 
 
 
 render(o3)
-
-
 
 
 
