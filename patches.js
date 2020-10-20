@@ -1,29 +1,32 @@
+// Hydra
+const hydra = new Hydra()
+a.show();
+a.setBins(4);
+a.setSmooth(.96)
+
 // Video stuff
 const video = document.createElement("video")
 video.autoplay = true
 video.crossOrigin = "anonymous"
 video.loop = true
 video.muted = false
-// video.src = "./fotos/videos/e01-small.mp4"
-
-const playVideo = () => {
-  video.play().then( () => s0.init({src:video, dynamic:true}))
-}
 
 
 
 function but1() {
   console.log('1')
-  video.src = "./fotos/videos/e01-small.mp4"
-  playVideo()
 
-  window.onload = function () {
-    const hydra = new Hydra()
+    // const hydra = new Hydra()
   
-    a.show();
-    a.setBins(4);
-    a.setSmooth(.96)
-  
+    // a.show();
+    // a.setBins(4);
+    // a.setSmooth(.96)
+
+    video.src = "./fotos/videos/e01-small.mp4"
+    // playVideo()
+    video.play().then( () => s0.init({src:video, dynamic:true}))    
+
+
     solid(0)
     .add(
       osc(1, 0, 0)
@@ -63,58 +66,54 @@ function but1() {
   
     render(o2)
   
-  }
 }
 
 function but2() {
   console.log('2')
-  video.src = "./fotos/videos/reg-test-small.mp4"
-  playVideo()
 
-  window.onload = function () {
-    const hydra = new Hydra()
+  // const hydra = new Hydra()
   
-    a.show();
-    a.setBins(4);
-    a.setSmooth(.96)
-  
-    src(s0)
-      .rotate (.1,() => Math.sin(time * 0.00008))
-      .scale(1.4)
-      .scale(  () => a.fft[3]*1.2+.5 )
-      .diff(o1,0.3)
-      .modulate(s0,.025)
-      .blend(o0)
-      .modulate(o2,.03)
-      .out(o0)
-  
-    src(s0)
-  
-    gradient(0.125,.2)
-      .pixelate([5,2,10],[15,8])
-      .scale(0.15)
-      .modulate(noise(  () => a.fft[0]*.3+.2 ),1,0.25)
-      .scrollX(0, ({time}) => Math.sin(time*0.05)*0.05 )
-      .scrollY(0, ({time}) => Math.sin(time*0.01)*-0.07 )
-      .out(o1)
-  
-  
-  
-    shape(3)
-      .scale(()=>mouse.y * 0.0008 + .1 )
-      .repeat(8,3)
-      .modulateScale(osc(8).rotate(Math.sin(time)),.5)
-      .scale(  () => a.fft[2]*8)
-      .modulateRotate(osc(20, 0).thresh(0.1, 0.84), () => 0.1 + mouse.x * 0.002)
-      .modulate(o2,.001)
-      .blend(o2)
-      .out(o2)
-  
-  
-  
-    render(o0)
-  
-  }
+  // a.show();
+  // a.setBins(4);
+  // a.setSmooth(.96)
+
+  video.src = "./fotos/videos/reg-test-small.mp4"
+  // playVideo()
+  video.play().then( () => s0.init({src:video, dynamic:true}) )    
+
+
+  gradient(0.125,.2)
+  .pixelate([5,2,10],[15,8])
+  .scale(0.15)
+  .modulate(noise(  () => a.fft[0]*.3+.2 ),1,0.25)
+  .scrollX(0, ({time}) => Math.sin(time*0.05)*0.05 )
+  .scrollY(0, ({time}) => Math.sin(time*0.01)*-0.07 )
+  .out(o1)
+
+
+
+  shape(3)
+    .scale(()=>mouse.y * 0.0008 + .1 )
+    .repeat(8,3)
+    .modulateScale(osc(8).rotate(Math.sin(time)),.5)
+    .scale(  () => a.fft[2]*8)
+    .modulateRotate(osc(20, 0).thresh(0.1, 0.84), () => 0.1 + mouse.x * 0.002)
+    .modulate(o2,.001)
+    .blend(o2)
+    .out(o2)
+
+
+  src(s0)
+    .rotate (.1,() => Math.sin(time * 0.00008))
+    .scale(1.4)
+    .scale(  () => a.fft[3]*1.2+.5 )
+    .diff(o1,0.3)
+    .modulate(s0,.025)
+    .blend(o0)
+    .modulate(o2,.03)
+    .out(o0)
+
+  render(o0) 
   
 }
 
