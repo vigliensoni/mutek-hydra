@@ -69,53 +69,41 @@ function but1() {
 }
 
 function but2() {
-  console.log('2')
+  console.log('2 - bd08 - flesh')
 
-  // const hydra = new Hydra()
-  
-  // a.show();
-  // a.setBins(4);
-  // a.setSmooth(.96)
-
-  video.src = "./fotos/videos/reg-test-small.mp4"
-  // playVideo()
+  video.src = "./fotos/videos/bd08-small.mp4"
   video.play().then( () => s0.init({src:video, dynamic:true}) )    
 
 
-  gradient(0.125,.2)
-  .pixelate([5,2,10],[15,8])
-  .scale(0.15)
-  .modulate(noise(  () => a.fft[0]*.3+.2 ),1,0.25)
-  .scrollX(0, ({time}) => Math.sin(time*0.05)*0.05 )
-  .scrollY(0, ({time}) => Math.sin(time*0.01)*-0.07 )
-  .out(o1)
-
-
-
-  shape(3)
-    .scale(()=>mouse.y * 0.0008 + .1 )
-    .repeat(8,3)
-    .modulateScale(osc(8).rotate(Math.sin(time)),.5)
-    .scale(  () => a.fft[2]*8)
-    .modulateRotate(osc(20, 0).thresh(0.1, 0.84), () => 0.1 + mouse.x * 0.002)
-    .modulate(o2,.001)
-    .blend(o2)
-    .out(o2)
-
-
   src(s0)
-    .rotate (.1,() => Math.sin(time * 0.00008))
-    .scale(1.4)
-    .scale(  () => a.fft[3]*1.2+.5 )
-    .diff(o1,0.3)
-    .modulate(s0,.025)
+    .scale(()=>a.fft[0]*9+.5)
+    .contrast(1.3)
+    .saturate(()=>a.fft[3]* 9 + 0.2)
+    .modulate(voronoi(3).modulate(noise(5)))
+    .rotate(({time})=> 6+time*.1)
+    .modulate(o0,.02)
     .blend(o0)
-    .modulate(o2,.03)
+    .scale(1.02, 1.02)
+    .modulate(o1)
     .out(o0)
 
-  render(o0) 
-  
+  solid(0)
+    .add
+    (voronoi(1, 0, 0)
+      .color(0, 0, 0))
+    .add(noise(3)
+    .rotate(04, 0.4)
+    .color(1,3,4)
+    .color( ()=>Math.sin(time)*0.002+.28,0.2,0.2 ))
+    .scale(.99,.99)
+    .blend(o1)
+    .blend(o1)
+    .blend(o1)
+    .out(o1)
+
+  render(o0)  
 }
+
 
 function but3() {
   console.log('3')
@@ -129,10 +117,52 @@ function but5() {
   console.log('5')
 }
 
+function but6() {
+  console.log('6 - fall in sync')
+  video.src = "./fotos/videos/reg-test-small.mp4"
+  // playVideo()
+  video.play().then( () => s0.init({src:video, dynamic:true}) )    
 
+  src(s0)
+    .saturate(0.15)
+    .contrast(3)
+    .add(src(o0)
+          .scrollX([0.05,-0.05].fast(0.1).smooth(1))
+          .scale([1,1].fast(0.3).smooth(1),[1.05,0.9,1].fast(0.29).smooth(1)),0.85)
+          .blend(o0)
+    .out(o0)
 
+  osc(7)
+    .posterize (() => (1 + mouse.x * 0.006)+1)
+    .modulate(noise(()=>a.fft[3]*3+1.5))
+    .out(o1)
 
+  voronoi(()=>Math.sin(time*.01)*1.2+5, ()=>mouse.y * .0004+.05, 100)
+    .scrollX(({time})=>Math.sin(time*.05)*-0.7-1)
+    .scrollX(()=>a.fft[0]*-.3)
+    .colorama(1)
+    .diff(o1)
+    .thresh()
+    .out(o2)
 
+  src(o1)
+    .modulateRotate(o0)
+    .modulate(o2,.1,1.3)
+    .out(o3)
+
+  render(o3)
+  
+}
+
+function but7() {
+  console.log('5')
+}
+function but8() {
+  console.log('5')
+}
+function but9() {
+  console.log('5')
+}
 
 
 
