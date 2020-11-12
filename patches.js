@@ -12,6 +12,20 @@ video.loop = true
 video.muted = false
 
 
+let muted = false
+
+function mute(){
+  if ( muted == false ) {
+    console.log('I will mute it')
+    muted = true
+    video.muted = muted
+  }  
+  else {
+    console.log('I will unmute it')
+    muted = false
+    video.muted = muted
+  }
+}
 
 function but1() {
   console.log('1 - e01 - window')
