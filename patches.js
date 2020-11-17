@@ -3,6 +3,7 @@ const hydra = new Hydra()
 a.show();
 a.setBins(4);
 a.setSmooth(.96)
+a.hide()
 
 // Video stuff
 const video = document.createElement("video")
